@@ -6,6 +6,7 @@
 #define DATA_SIZE (261)
 #define INPUT_KEY_MAX (256)
 #define KEY_SIZE (3)
+#define PUT_DATA (KEY_SIZE+1)
 
 void main(void) {
 	FILE *fp;
@@ -43,7 +44,7 @@ void main(void) {
 		/*検索キーと一致するデータを探す*/
 		for (int i = 0; i < DATA_MAX; i++) {
 			if ((checkData = memcmp(sBuf[i], key, KEY_SIZE)) == 0) {
-				printf("[該当データ]:%s", &(sBuf[i][4]));
+				printf("[該当データ]:%s", &(sBuf[i][PUT_DATA]));
 				break;
 			}
 		}
