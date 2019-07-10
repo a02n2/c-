@@ -4,9 +4,9 @@
 
 void main(void) {
 	FILE *fp;
-	char sBuf[1000][261];	//ファイルの中身
-	char key[256];	//検索キー
-	char *adr;		//検索キーと合致するデータのアドレス
+	char sBuf[1000][261];	/*ファイルの中身*/
+	char key[256];	/*検索キー*/
+	char *adr;		/*検索キーと合致するデータのアドレス*/
 
 	/*ファイルを開いてデータを配列に格納*/
 	if ((fp = fopen("data.txt", "r")) == NULL) {
