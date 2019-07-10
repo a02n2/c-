@@ -2,11 +2,16 @@
 #include<string.h>
 #pragma warning(disable: 4996)
 
+#define DATA_MAX (1000)
+#define DATA_SIZE (261)
+#define INPUT_KEY_MAX (256)
+#define KEY_SIZE (3)
+
 void main(void) {
 	FILE *fp;
-	char sBuf[1000][261];	/*ファイルの中身*/
-	char key[256];		/*検索キー*/
-	char *adr;		/*検索キーと合致するデータのアドレス*/
+	char sBuf[DATA_MAX][DATA_SIZE];		/*ファイルの中身*/
+	char key[INPUT_KEY_MAX];		/*検索キー*/
+	int checkData;		/*一致データ検索結果*/
 
 	/*ファイルを開いてデータを配列に格納*/
 	if ((fp = fopen("data.txt", "r")) == NULL) {
@@ -14,8 +19,8 @@ void main(void) {
 		return;
 	}
 
-	for (int i = 0; i < 1000; i++) {
-		fgets(&(sBuf[i][0]), 261, fp);
+	for (int i = 0; i < DATA_MAX; i++) {
+		fgets(&(sBuf[i][0]), DATA_SIZE, fp);
 	}
 	fclose(fp);
 
@@ -26,25 +31,25 @@ void main(void) {
 
 		/*EXITが入力されると終了*/
 		if (strcmp(key, "EXIT") == 0) {
-			return;
+			break;
 		}
 
-		/*検索キーの長さが3でないとデータなし*/
-		if (strlen(key) != 3) {
+		/*検索キーの長さチェック*/
+		if (strlen(key) != KEY_SIZE) {
 			printf("[検索結果]:該当データなし\n");
 			continue;
 		}
 		
-		/*検索キーと合致するデータを探す*/
-		for (int i = 0; i < 1000; i++) {
-			adr = strstr(sBuf[i], key);
-			if (adr != NULL) {
+		/*検索キーと一致するデータを探す*/
+		for (int i = 0; i < DATA_MAX; i++) {
+			if ((checkData = memcmp(sBuf[i], key, KEY_SIZE)) == 0) {
 				printf("[該当データ]:%s", &(sBuf[i][4]));
 				break;
 			}
 		}
-		if (adr == NULL) {
+		if (checkData != 0) {
 			printf("[検索結果]:該当データなし\n");
 		}
 	}
+	return;
 }
