@@ -8,7 +8,7 @@ void main(void) {
 	char key[256];	//検索キー
 	char *adr;		//検索キーと合致するデータのアドレス
 
-	/*ファイルを開いて中身を配列に格納*/
+	/*ファイルを開いてデータを配列に格納*/
 	if ((fp = fopen("data.txt", "r")) == NULL) {
 		printf("ファイルのオープンに失敗しました。");
 		return;
@@ -19,6 +19,7 @@ void main(void) {
 	}
 	fclose(fp);
 
+	/*データ検索*/
 	while (1) {
 		printf("3桁の数字を入力して下さい[終了/EXIT]:");
 		scanf("%s", key);
