@@ -64,7 +64,7 @@ void main(void) {
 
 		/*検索キーの長さチェック*/
 		if (strlen(key) != KEY_SIZE) {
-#ifdef A1
+#if defined (A1)
 			printf(MSG[2]);
 #else
 			printf(MSG[4]);
