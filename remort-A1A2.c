@@ -12,7 +12,7 @@
 	#define DATA "data_A1.txt"
 #else	//A2
 	#define DATA_MAX (10000)
-	#define DATA_SIZE (262)
+	#define DATA_SIZE (263)
 	#define KEY_SIZE (4)
 	#define PUT_DATA (KEY_SIZE+2)
 	#define DATA "data_A2.txt"
