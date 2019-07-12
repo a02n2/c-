@@ -26,11 +26,11 @@
 typedef enum eMSG_NO
 {
 	eMSG_NO01 = 0,		/* 文言ID01 */
-	eMSG_NO02 = 1,		/* 文言ID02 */
-	eMSG_NO03 = 2,		/* 文言ID03 */
-	eMSG_NO04 = 3,		/* 文言ID04 */
-	eMSG_NO05 = 4,		/* 文言ID05 */
-	eMSG_MAX = 5		/* 最大メッセージ数 */
+	eMSG_NO02,		/* 文言ID02 */
+	eMSG_NO03,		/* 文言ID03 */
+	eMSG_NO04,		/* 文言ID04 */
+	eMSG_NO05,		/* 文言ID05 */
+	eMSG_MAX		/* 最大メッセージ数 */
 } MSG_ID;
 
 static const char MSG[eMSG_MAX][MSG_SIZE] = {
