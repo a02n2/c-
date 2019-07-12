@@ -24,9 +24,9 @@
 static const char MSG[MSG_MAX][MSG_SIZE] = { 
 	{
 #if defined A1
-		"3桁の数字を入力して下さい[終了/EXIT]:"
+	"3桁の数字を入力して下さい[終了/EXIT]:"
 #else
-		"4桁の数字を入力して下さい[終了/EXIT]:"
+	"4桁の数字を入力して下さい[終了/EXIT]:"
 #endif
 	},
 	{"[該当データ]:"},
