@@ -38,7 +38,7 @@ void main(void) {
 	char key[INPUT_KEY_MAX];		/*検索キー*/
 	int checkData;		/*一致データ検索結果*/
 
-						/*ファイルを開いてデータを配列に格納*/
+	/*ファイルを開いてデータを配列に格納*/
 	if ((fp = fopen(DATA, FILE_OPEN_MODE)) == NULL) {
 		printf(FILE_OPEN_ERROR);
 		return;
